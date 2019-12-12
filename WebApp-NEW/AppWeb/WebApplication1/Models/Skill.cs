@@ -15,6 +15,7 @@ namespace WebApplication1.Models
         public int ProfId { get; set; }
         public int Level { get; set; }
         public string Description { get; set; }
+        public string Detail { get; set; }
 
         public virtual GeneralArea Generalarea { get; set; }
         public virtual Professionist Prof { get; set; }

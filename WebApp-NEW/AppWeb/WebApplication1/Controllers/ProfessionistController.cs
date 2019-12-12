@@ -6,23 +6,27 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
+using WebApplication1.Models.Repositories.Abstractions;
 
 namespace WebApplication1.Controllers
 {
     public class ProfessionistController : Controller
     {
         private readonly NoNullProjectContext _context;
+        private readonly ProfessionistRepository repo;
 
-        public ProfessionistController(NoNullProjectContext context)
+        public ProfessionistController (NoNullProjectContext context, ProfessionistRepository repo)
         {
+            this.repo = repo;
             _context = context;
         }
 
         // GET: Professionist
         public async Task<IActionResult> Index()
         {
-            var noNullProjectContext = _context.Professionists.Include(p => p.Destination);
-            return View(await noNullProjectContext.ToListAsync());
+            //var noNullProjectContext = _context.Professionists.Include(p => p.Destination);
+            //return View(await noNullProjectContext.ToListAsync());
+            return View(await repo.AllAsync());
         }
 
         // GET: Professionist/Details/5

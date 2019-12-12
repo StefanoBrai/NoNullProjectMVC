@@ -8612,11 +8612,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\WebApp-NEW\\AppWeb\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\corso\\NoNullProjectMVC-master\\WebApp-NEW\\AppWeb\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\user\\Desktop\\WebApp-NEW\\AppWeb\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\corso\\NoNullProjectMVC-master\\WebApp-NEW\\AppWeb\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\WebApp-NEW\\AppWeb\\WebApplication1\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\corso\\NoNullProjectMVC-master\\WebApp-NEW\\AppWeb\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

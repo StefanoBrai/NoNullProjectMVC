@@ -52,7 +52,7 @@ namespace WebApplication1.Controllers
         public IActionResult Create()
         {
             ViewData["GeneralareaId"] = new SelectList(_context.GeneralArea, "GeneralareaId", "Name");
-            ViewData["ProfId"] = new SelectList(_context.Professionists, "ProfId", "Address");
+            ViewData["ProfId"] = new SelectList(_context.Professionists, "ProfId", "Lastname" + "Firstname");
             return View();
         }
 
@@ -70,7 +70,7 @@ namespace WebApplication1.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["GeneralareaId"] = new SelectList(_context.GeneralArea, "GeneralareaId", "Name", skill.GeneralareaId);
-            ViewData["ProfId"] = new SelectList(_context.Professionists, "ProfId", "Address", skill.ProfId);
+            ViewData["ProfId"] = new SelectList(_context.Professionists, "ProfId", "Lastname" + "Firstname", skill.ProfId);
             return View(skill);
         }
 
@@ -88,7 +88,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             ViewData["GeneralareaId"] = new SelectList(_context.GeneralArea, "GeneralareaId", "Name", skill.GeneralareaId);
-            ViewData["ProfId"] = new SelectList(_context.Professionists, "ProfId", "Address", skill.ProfId);
+            ViewData["ProfId"] = new SelectList(_context.Professionists, "ProfId", "Lastname" + "Firstname", skill.ProfId);
             return View(skill);
         }
 
@@ -125,7 +125,7 @@ namespace WebApplication1.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["GeneralareaId"] = new SelectList(_context.GeneralArea, "GeneralareaId", "Name", skill.GeneralareaId);
-            ViewData["ProfId"] = new SelectList(_context.Professionists, "ProfId", "Address", skill.ProfId);
+            ViewData["ProfId"] = new SelectList(_context.Professionists, "ProfId", "Lastname" + "Firstname", skill.ProfId);
             return View(skill);
         }
 

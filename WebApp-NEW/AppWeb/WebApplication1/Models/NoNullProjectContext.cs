@@ -33,7 +33,7 @@ namespace WebApplication1.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=192.168.0.137;Database=NoNullProject;user=sa;password=SQL_server0%");
+                optionsBuilder.UseSqlServer("Server=127.0.0.1;Database=NoNullProject;user=sa;password=SQL_server0%");
             }
         }
 
@@ -449,6 +449,11 @@ namespace WebApplication1.Models
                 entity.Property(e => e.Level).HasColumnName("level");
 
                 entity.Property(e => e.ProfId).HasColumnName("profid");
+
+                entity.Property(e => e.Detail)
+                    .IsRequired()
+                    .HasColumnName("detail")
+                    .HasMaxLength(120);
 
                 entity.HasOne(d => d.Generalarea)
                     .WithMany(p => p.Skills)
