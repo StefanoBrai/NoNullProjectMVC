@@ -28,9 +28,10 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<NoNullProjectContext>(opts => opts.UseSqlServer(
-                "Server=127.0.0.1;Database=NoNullProject;user=sa;password=SQL_server0%"));
+                "Server=192.168.0.137;Database=NoNullProject;user=sa;password=SQL_server0%"));
             services.AddTransient<SkillRepository, EfSkillRepository>();
             services.AddTransient<ProfessionistRepository, EFProfessionistRepository>();
+            services.AddCors();
             services.AddControllersWithViews();
         }
 
@@ -47,6 +48,11 @@ namespace WebApplication1
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseCors(builder =>
+                        builder.AllowAnyOrigin());
+
+
             app.UseStatusCodePages();
             app.UseHttpsRedirection();
             app.UseStaticFiles();

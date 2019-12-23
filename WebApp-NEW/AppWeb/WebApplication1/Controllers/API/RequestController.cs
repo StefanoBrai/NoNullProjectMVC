@@ -9,25 +9,25 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers.API
 {
-    [Route("api/requests")]
+    [Route("api/request")]
     [ApiController]
-    public class RequestsController : ControllerBase
+    public class RequestController : ControllerBase
     {
         private readonly NoNullProjectContext _context;
 
-        public RequestsController(NoNullProjectContext context)
+        public RequestController(NoNullProjectContext context)
         {
             _context = context;
         }
 
-        // GET: api/Requests
+        // GET: api/Request
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Request>>> GetRequests()
         {
             return await _context.Requests.ToListAsync();
         }
 
-        // GET: api/Requests/5
+        // GET: api/Request/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Request>> GetRequest(int id)
         {
@@ -41,7 +41,7 @@ namespace WebApplication1.Controllers.API
             return request;
         }
 
-        // PUT: api/Requests/5
+        // PUT: api/Request/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
@@ -73,7 +73,7 @@ namespace WebApplication1.Controllers.API
             return NoContent();
         }
 
-        // POST: api/Requests
+        // POST: api/Request
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
@@ -85,7 +85,7 @@ namespace WebApplication1.Controllers.API
             return CreatedAtAction("GetRequest", new { id = request.ReqId }, request);
         }
 
-        // DELETE: api/Requests/5
+        // DELETE: api/Request/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Request>> DeleteRequest(int id)
         {
